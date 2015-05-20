@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "extendr": "~2.1.0",
-    "safeps": "~2.2.2",
+    "safeps": "https://github.com/nfriedly/safeps#compiled",
     "taskgroup": "~3.2.3"
   },
   "devDependencies": {
