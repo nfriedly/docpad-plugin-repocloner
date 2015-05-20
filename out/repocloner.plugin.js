@@ -33,7 +33,9 @@
         repos.forEach(function(repoDetails) {
           return tasks.addTask(function(complete) {
             var _opts;
-            repoDetails.path = repoDetails.path.replace(/^src\/documents/, config.documentsPaths[0]).replace(/^src\/files/, config.filesPaths[0]).replace(/^src/, config.srcPath).replace(/^out/, config.outPath);
+            repoDetails.cwd || (repoDetails.cwd = repoDetails.path);
+            delete repoDetails.path;
+            repoDetails.cwd = repoDetails.cwd.replace(/^src\/documents/, config.documentsPaths[0]).replace(/^src\/files/, config.filesPaths[0]).replace(/^src/, config.srcPath).replace(/^out/, config.outPath);
             docpad.log('info', "Updating " + repoDetails.name + "...");
             _opts = {
               remote: 'origin',
